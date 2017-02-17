@@ -1,0 +1,9 @@
+---
+- hosts: logstash-server
+  tasks:
+  - name: download logstash-5.0.0.zip
+    get_url: url=https://artifacts.elastic.co/downloads/logstash/logstash-5.0.0.zip dest=~/
+
+  - name: unzip logstash
+    shell: unzip logstash-5.0.0.zip
+    become: true
