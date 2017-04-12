@@ -70,7 +70,7 @@ SVG(filename='images/notebooks-filled.svg')
 
 
 
-![svg](images/notebooks-filled.svg)
+![svg](images/notebooks-filled.png)
 
 
 
