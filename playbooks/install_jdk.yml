@@ -4,6 +4,11 @@
   
   tasks:
 
+  - name: copy local rpm to remote
+    copy: >
+      src=/tmp/jdk-8u112-linux-x64.rpm
+      dest=/tmp/jdk-8u112-linux-x64.rpm
+
   - name: install jdk
     yum:
       name: /tmp/jdk-8u112-linux-x64.rpm
