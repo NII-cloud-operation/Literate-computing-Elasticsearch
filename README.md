@@ -72,6 +72,7 @@ SVG(filename='images/notebooks-filled.svg')
 
 ![svg](images/notebooks-filled.png)
 
+※SVGファイルには各Notebookへのリンクを埋め込んでおります。[notebooks-filled.svg](https://raw.githubusercontent.com/NII-cloud-operation/Literate-computing-Elasticsearch/master/images/notebooks-filled.svg)から参照可能です。
 
 
 *構築*フェーズは、構築・運用対象とするElasticsearchのためのマシンを準備し、ソフトウェアのインストール、設定を行います。
