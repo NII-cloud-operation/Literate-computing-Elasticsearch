@@ -7,8 +7,17 @@ Literate Computing for Reproducible Infrastructure: Elasticsearch運用をJupyte
 
 **なお、これらのNotebookはNIIクラウドチーム内で行っている作業の考え方を示すためのもので、環境によってはそのままでは動作しないものもあります。**
 
+----
+
 [![Creative Commons License](https://i.creativecommons.org/l/by/4.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/)
 
+Literate-computing-Elasticsearch (c) by National Institute of Informatics
+
+Literate-computing-Elasticsearch is licensed under a
+Creative Commons Attribution 4.0 International License.
+
+You should have received a copy of the license along with this
+work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
 
 ## Elasticsearchとは？
 Elasticsearchは、リアルタイムにデータを検索/分析するための分散型の全文検索エンジンであり、次のような特徴を持っています。
@@ -168,7 +177,7 @@ HTML('''
 ```python
 ref_notebooks = filter(lambda m: m, map(lambda n: re.match(r'([A-Z][0-9][0-9a-z]+_.*)\.ipynb', n), os.listdir('.')))
 ref_notebooks = sorted(ref_notebooks, key=lambda m: m.group(1))
-!zip ref_notebooks-{datetime.now().strftime('%Y%m%d')}.zip *.ipynb {' '.join(map(lambda n: '"' + n.group(0) + '"', ref_notebooks))} logstash_conf/* playbooks/*.yml sample_data/* images/* scripts/* 
+!zip ref_notebooks-{datetime.now().strftime('%Y%m%d')}.zip *.ipynb {' '.join(map(lambda n: '"' + n.group(0) + '"', ref_notebooks))} logstash_conf/* playbooks/*.yml sample_data/* images/* scripts/*
 ```
 
     updating: 00_Prerequisites for Literate Computing via Notebooks.ipynb (deflated 76%)
