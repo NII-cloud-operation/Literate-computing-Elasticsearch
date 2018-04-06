@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+  - name: set_shared file system repository
+    lineinfile: >
+      dest=/etc/elasticsearch/elasticsearch.yml
+      regexp='^#*path.repo.*:'
+      line='path.repo: ["{{ backup_dir }}"]'

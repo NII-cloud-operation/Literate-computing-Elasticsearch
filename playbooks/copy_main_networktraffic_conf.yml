@@ -1,0 +1,15 @@
+---
+- hosts: logstash-server
+  become: true
+  
+  tasks:
+  - name: copy local main.conf to remote
+    copy: >
+      src={{notebooks_home}}/logstash_conf/main_networktraffic.conf
+      dest=/etc/logstash/conf.d/main_networktraffic.conf
+      
+  - name: set input file directory
+    lineinfile: >
+      dest=/etc/logstash/conf.d/main_networktraffic.conf
+      regexp='^.*path => \"\/home\/.*\/traffic_log\"'
+      line='    path => "/home/{{user}}/traffic_log"'

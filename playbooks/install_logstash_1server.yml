@@ -3,7 +3,7 @@
   become: yes
 
   tasks:
-  - name: install logstash
+  - name: install logstash 6.1.3
     yum:
-      name: https://artifacts.elastic.co/downloads/logstash/logstash-5.0.0.rpm
+      name: https://artifacts.elastic.co/downloads/logstash/logstash-6.1.3.rpm
       state: present
