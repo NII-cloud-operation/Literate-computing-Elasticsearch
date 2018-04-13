@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+
+  - name: cd_mnt
+    command: "cd /mnt"
+    
+  - name: mkdir
+    command: "mkdir -p {{ backup_dir }}"
+
+  - name: chown
+    command: "chown -R elasticsearch:elasticsearch {{ backup_dir }}"

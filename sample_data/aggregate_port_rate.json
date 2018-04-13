@@ -1,0 +1,20 @@
+{
+    "size": 0,
+    "aggs": {
+        "by_dst_port": {
+            "terms": {
+                "field": "dst_port",
+                "order": {
+                    "sum_rate": "desc"
+                }
+            },
+            "aggs": {
+                "sum_rate": {
+                    "sum": {
+                        "field": "rate"
+                    }
+                }
+            }
+        }
+    }
+}

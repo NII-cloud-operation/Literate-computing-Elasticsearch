@@ -1,0 +1,9 @@
+---
+- hosts: logstash-server
+  
+  tasks:
+
+  - name: copy local networklocation.csv to remote
+    copy: >
+      src={{notebooks_home}}/sample_data/networklocation.csv
+      dest=~/networklocation.csv

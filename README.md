@@ -53,9 +53,9 @@ Elasticsearchはオープンソース製品として開発されています。
 
 | OS/ミドルウェア | バージョン |
 |----|----|
-|Elasticserach|elasticsearch-5.0.0-1.noarch|
-|Logstash|logstash-5.0.0-1.noarch|
-|Ansible|2.2.0.0|
+|Elasticserach|elasticsearch-6.1.3-1.noarch|
+|Logstash|logstash-6.1.3-1.noarch|
+|Ansible|2.4.2.0|
 |OS|CentOS Linux release 7.2.1511|
 |JDK|jdk1.8.0_112-1.8.0_112-fcs.x86_64|
 

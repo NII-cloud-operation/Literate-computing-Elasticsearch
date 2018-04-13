@@ -1,0 +1,10 @@
+---
+- hosts: logstash-server
+  become: true
+  
+  tasks:
+
+  - name: copy local main.conf to remote
+    copy: >
+      src={{notebooks_home}}/sample_data/networktraffic.csv
+      dest=~/networktraffic.csv

@@ -1,0 +1,37 @@
+{
+  "size": 0,
+  "aggs": {
+    "by_time_range": {
+      "filter": {
+        "range": {
+          "@timestamp": {
+            "gte": "now-1m",
+            "lte": "now"
+          }
+        }
+      },
+      "aggs": {
+        "by_src_dst_ip": {
+          "terms": {
+            "field": "src_ip-dst_ip"
+          },
+          "aggs": {
+            "by_time": {
+              "date_histogram": {
+                "field": "@timestamp",
+                "interval":"1s"
+              },
+              "aggs": {
+                "sum_rate": {
+                  "sum": {
+                    "field": "rate"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

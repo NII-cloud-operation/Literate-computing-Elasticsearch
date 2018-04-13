@@ -1,0 +1,56 @@
+{
+  "size": 0,
+  "aggs": {
+    "by_time_range": {
+      "filter": {
+        "range": {
+          "@timestamp": {
+            "gte": "now-1m",
+            "lte": "now"
+          }
+        }
+      },
+      "aggs": {
+        "by_src_dst_loc": {
+          "terms": {
+            "field": "src_ip"
+          },
+          "aggs": {
+            "by_dst_loc": {
+                "terms": {
+                    "field": "dst_ip"
+              },
+              "aggs": {
+                "src_latitude": {
+                  "avg": {
+                    "field": "src_latitude"
+                  }
+                },
+                "src_longitude": {
+                  "avg": {
+                    "field": "src_longitude"
+                  }
+                },
+                "dst_latitude": {
+                  "avg": {
+                    "field": "dst_latitude"
+                  }
+                },
+                "dst_longitude": {
+                  "avg": {
+                    "field": "dst_longitude"
+                  }
+                },
+                "sum_rate": {
+                  "sum": {
+                    "field": "rate"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
